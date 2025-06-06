@@ -1,0 +1,80 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SharvayFlix</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      color: #222;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .button {
+      padding: 12px 24px;
+      font-size: 16px;
+      font-weight: bold;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      margin: 10px;
+      transition: background-color 0.3s ease;
+      color: white;
+      text-decoration: none;
+    }
+
+    .download-btn {
+      background-color: #e60000;
+    }
+
+    .download-btn:hover {
+      background-color: #cc0000;
+    }
+
+    .toggle-btn {
+      background-color: #444;
+    }
+
+    .toggle-btn:hover {
+      background-color: #222;
+    }
+
+    .dark-mode {
+      background-color: #121212;
+      color: #eee;
+    }
+  </style>
+</head>
+<body class="light-mode">
+  <div class="container">
+    <h1>Welcome to SharvayFlix</h1>
+    <a href="SharvayFlix.sb3" download class="button download-btn">Download SharvayFlix</a>
+    <button class="button toggle-btn" onclick="toggleMode()">🌙 Dark Mode</button>
+  </div>
+
+  <script>
+    let isDark = false;
+    function toggleMode() {
+      const body = document.body;
+      const toggleBtn = document.querySelector('.toggle-btn');
+      isDark = !isDark;
+      body.classList.toggle('dark-mode', isDark);
+      toggleBtn.textContent = isDark ? '🌞 Light Mode' : '🌙 Dark Mode';
+    }
+  </script>
+</body>
+</html>
